@@ -22,4 +22,6 @@ export declare class NbChatMessageTextComponent {
      * @type {Date}
      */
     date: Date;
+    seen:String;
+    sended:String;
 }
