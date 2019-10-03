@@ -8900,7 +8900,7 @@ NbTabsetComponent = __decorate$67([
           [attr.tabindex]="tab.disabled ? -1 : 0"
           class="tab">
         <a href (click)="$event.preventDefault()" tabindex="-1" class="tab-link">
-          <nb-icon *ngIf="tab.tabIcon" [icon]="tab.tabIcon"></nb-icon>
+          <i *ngIf="tab.tabIcon" [class]="tab.tabIcon"></i>
           <span *ngIf="tab.tabTitle" class="tab-text">{{ tab.tabTitle }}</span>
         </a>
         <nb-badge *ngIf="tab.badgeText"
@@ -12892,14 +12892,6 @@ __decorate$93([
 __decorate$93([
     Input(),
     __metadata$60("design:type", String)
-], NbChatMessageComponent.prototype, "sended", void 0);
-__decorate$93([
-    Input(),
-    __metadata$60("design:type", Boolean)
-], NbChatMessageComponent.prototype, "seen", void 0);
-__decorate$93([
-    Input(),
-    __metadata$60("design:type", Boolean)
 ], NbChatMessageComponent.prototype, "sender", void 0);
 __decorate$93([
     Input(),
@@ -12943,20 +12935,20 @@ NbChatMessageComponent = __decorate$93([
       <ng-container [ngSwitch]="type">
 
         <nb-chat-message-file *ngSwitchCase="'file'"
-                              [sender]="sender" [date]="date" [seen]="seen" [sended]="sended" [message]="message" [files]="files">
+                              [sender]="sender" [date]="date" [message]="message" [files]="files">
         </nb-chat-message-file>
 
         <nb-chat-message-quote *ngSwitchCase="'quote'"
-                              [sender]="sender" [date]="date" [seen]="seen" [sended]="sended" [message]="message" [quote]="quote">
+                              [sender]="sender" [date]="date" [message]="message" [quote]="quote">
         </nb-chat-message-quote>
 
         <nb-chat-message-map *ngSwitchCase="'map'"
                               [sender]="sender" [date]="date"
-                              [message]="message" [seen]="seen" [sended]="sended" [latitude]="latitude" [longitude]="longitude">
+                              [message]="message" [latitude]="latitude" [longitude]="longitude">
         </nb-chat-message-map>
 
         <nb-chat-message-text *ngSwitchDefault
-                              [sender]="sender" [seen]="seen" [sended]="sended" [date]="date" [message]="message">
+                              [sender]="sender" [date]="date" [message]="message">
         </nb-chat-message-text>
       </ng-container>
     </div>
@@ -13457,14 +13449,6 @@ __decorate$94([
 ], NbChatMessageMapComponent.prototype, "message", void 0);
 __decorate$94([
     Input(),
-    __metadata$61("design:type", Boolean)
-], NbChatMessageMapComponent.prototype, "seen", void 0);
-__decorate$94([
-    Input(),
-    __metadata$61("design:type", Boolean)
-], NbChatMessageMapComponent.prototype, "sended", void 0);
-__decorate$94([
-    Input(),
     __metadata$61("design:type", String)
 ], NbChatMessageMapComponent.prototype, "sender", void 0);
 __decorate$94([
@@ -13483,7 +13467,7 @@ NbChatMessageMapComponent = __decorate$94([
     Component({
         selector: 'nb-chat-message-map',
         template: `
-    <nb-chat-message-file [files]="[file]" [seen]="seen" [sended]="sended" [message]="message" [sender]="sender" [date]="date"></nb-chat-message-file>
+    <nb-chat-message-file [files]="[file]" [message]="message" [sender]="sender" [date]="date"></nb-chat-message-file>
   `,
         changeDetection: ChangeDetectionStrategy.OnPush
     }),
@@ -13533,14 +13517,6 @@ __decorate$95([
 ], NbChatMessageFileComponent.prototype, "message", void 0);
 __decorate$95([
     Input(),
-    __metadata$62("design:type", Boolean)
-], NbChatMessageFileComponent.prototype, "seen", void 0);
-__decorate$95([
-    Input(),
-    __metadata$62("design:type", Boolean)
-], NbChatMessageFileComponent.prototype, "sended", void 0);
-__decorate$95([
-    Input(),
     __metadata$62("design:type", String)
 ], NbChatMessageFileComponent.prototype, "sender", void 0);
 __decorate$95([
@@ -13556,7 +13532,7 @@ NbChatMessageFileComponent = __decorate$95([
     Component({
         selector: 'nb-chat-message-file',
         template: `
-    <nb-chat-message-text [sender]="sender" [sended]="sended" [seen]="seen" [date]="date" [message]="message">
+    <nb-chat-message-text [sender]="sender" [date]="date" [message]="message">
       {{ message }}
     </nb-chat-message-text>
 
@@ -13610,14 +13586,6 @@ __decorate$96([
 ], NbChatMessageQuoteComponent.prototype, "sender", void 0);
 __decorate$96([
     Input(),
-    __metadata$63("design:type", Boolean)
-], NbChatMessageQuoteComponent.prototype, "sended", void 0);
-__decorate$96([
-    Input(),
-    __metadata$63("design:type", Boolean)
-], NbChatMessageQuoteComponent.prototype, "seen", void 0);
-__decorate$96([
-    Input(),
     __metadata$63("design:type", Date)
 ], NbChatMessageQuoteComponent.prototype, "date", void 0);
 __decorate$96([
@@ -13628,7 +13596,7 @@ NbChatMessageQuoteComponent = __decorate$96([
     Component({
         selector: 'nb-chat-message-quote',
         template: `
-    <p class="sender" *ngIf="sender || date"><small>{{ seen }}</small><b>{{ sender }}</b> <time>{{ date  | date:'shortTime' }}</time></p>
+    <p class="sender" *ngIf="sender || date"><b>{{ sender }}</b> <time>{{ date  | date:'shortTime' }}</time></p>
     <p class="quote">
       {{ quote }}
     </p>
@@ -13666,14 +13634,6 @@ __decorate$97([
 __decorate$97([
     Input(),
     __metadata$64("design:type", String)
-], NbChatMessageTextComponent.prototype, "seen", void 0);
-__decorate$97([
-    Input(),
-    __metadata$64("design:type", String)
-], NbChatMessageTextComponent.prototype, "sended", void 0);
-__decorate$97([
-    Input(),
-    __metadata$64("design:type", String)
 ], NbChatMessageTextComponent.prototype, "message", void 0);
 __decorate$97([
     Input(),
@@ -13683,7 +13643,7 @@ NbChatMessageTextComponent = __decorate$97([
     Component({
         selector: 'nb-chat-message-text',
         template: `
-    <p class="text" *ngIf="message"><i *ngIf="seen" class="fa fa-check-double"></i><i *ngIf="sended && !seen" class="fa fa-check"></i><b *ngIf="sender" >{{ sender }}</b>{{ message }} <time *ngIf="date">{{ date  | date:'shortTime' }}</time></p>
+    <p class="text" *ngIf="message"><b *ngIf="sender" >{{ sender }}</b>{{ message }} <time *ngIf="date">{{ date  | date:'shortTime' }}</time></p>
   `,
         changeDetection: ChangeDetectionStrategy.OnPush
     })

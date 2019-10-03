@@ -130,14 +130,6 @@ var NbChatMessageComponent = /** @class */ (function () {
         Input(),
         __metadata("design:type", String)
     ], NbChatMessageComponent.prototype, "message", void 0);
-    __decorate$93([
-    Input(),
-    __metadata$60("design:type", Boolean)
-], NbChatMessageComponent.prototype, "sended", void 0);
-__decorate$93([
-    Input(),
-    __metadata$60("design:type", Boolean)
-], NbChatMessageComponent.prototype, "seen", void 0);
     __decorate([
         Input(),
         __metadata("design:type", String)

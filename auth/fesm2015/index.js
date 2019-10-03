@@ -1908,20 +1908,25 @@ NbAuthComponent = __decorate$8([
         template: `
     <nb-layout>
       <nb-layout-column>
-        <nb-card>
-          <nb-card-header>
-            <nav class="navigation">
-              <a href="#" (click)="back()" class="link back-link" aria-label="Back">
-                <nb-icon icon="arrow-back"></nb-icon>
-              </a>
-            </nav>
-          </nb-card-header>
+       <div class="login-wrapper">
+        <nb-card class="login-card">
           <nb-card-body>
             <nb-auth-block>
               <router-outlet></router-outlet>
             </nb-auth-block>
           </nb-card-body>
+          <a class="back" href="https://sakku.cloud/"> 
+           <i class="fa fa-fw fa-arrow-left"></i>         
+          بازگشت
+         </a>
         </nb-card>
+        <span class="extra-link mt-5">
+           تمامی حقوق متعلق به پدیدآورندگان سکو می‌باشد
+            <a class="privacy" href="#">
+                قوانین و مقررات
+            </a>
+        </span>
+       </div>
       </nb-layout-column>
     </nb-layout>
   `,
