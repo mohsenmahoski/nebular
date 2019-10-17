@@ -1922,7 +1922,7 @@ NbAuthComponent = __decorate$8([
         </nb-card>
         <span class="extra-link mt-5">
            تمامی حقوق متعلق به پدیدآورندگان سکو می‌باشد
-            <a class="privacy" href="#">
+            <a class="privacy" href="https://sakku.cloud/">
                 قوانین و مقررات
             </a>
         </span>
